@@ -40,15 +40,7 @@ bat 'gradlew test'
     
     
      stage('build') {
-       post {
-        success {
-          mail(subject: 'Build Success', body: 'New Build is deployed !', from: 'jm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
-        }
-        failure {
-          mail(subject: 'Build Failure', body: "the new build isn't deployed succesfully !", from: 'ijm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
-        }
-        
-      }
+     
       
       
       steps {
