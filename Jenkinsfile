@@ -21,7 +21,7 @@ bat 'gradlew test'
       parallel {
         stage('Code Analysis') {
           steps {
-            withSonarQubeEnv('TP8_OGL_JENKINS') {
+            withSonarQubeEnv('TP_8') {
               bat 'sonar-scanner'
             }
 
