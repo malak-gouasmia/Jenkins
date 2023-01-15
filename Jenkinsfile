@@ -28,7 +28,7 @@ bat 'gradlew test'
         }
     
     
-         stage("Quality Gate") {
+         stage("Code Quality") {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
@@ -37,6 +37,17 @@ bat 'gradlew test'
                 }
             }
         }
+    
+    stage('Build') {
+      post {
+        success {
+          mail(subject: 'Build Success', body: 'New Build is deployed !', from: 'ijm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
+        }
+        failure {
+          mail(subject: 'Build Failure', body: "the new build isn't deployed succesfully !", from: 'jm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
+        }
+        
+      }
     
     
 }
