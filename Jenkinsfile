@@ -38,16 +38,7 @@ bat 'gradlew test'
             }
         }
     
-    stage('Build') {
-      post {
-        success {
-          mail(subject: 'Build Success', body: 'New Build is deployed !', from: 'ijm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
-        }
-        failure {
-          mail(subject: 'Build Failure', body: "the new build isn't deployed succesfully !", from: 'jm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
-        }
-        
-      }
+    
     
     
 }
