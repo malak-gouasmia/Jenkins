@@ -51,6 +51,11 @@ bat 'gradlew test'
       }
     }
    
+     stage('Deploy') {
+      steps {
+        bat 'gradle publish'
+      }
+    }
     
     
 }
