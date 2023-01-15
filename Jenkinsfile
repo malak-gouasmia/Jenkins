@@ -15,6 +15,19 @@ bat 'gradlew test'
 
 }
 }
+   
+    
+     stage('Code Analysis') {
+      parallel {
+        stage('Code Analysis') {
+          steps {
+            withSonarQubeEnv('TP8_OGL_JENKINS') {
+              bat 'sonar-scanner'
+            }
+
+
+          }
+        }
     
     
 }
