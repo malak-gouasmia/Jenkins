@@ -54,6 +54,7 @@ bat 'gradlew test'
         bat 'gradle javadoc'
         archiveArtifacts 'build/libs/*.jar'
         junit(testResults: 'build/reports/tests/test', allowEmptyResults: true)
+        
       }
     }
     
