@@ -19,7 +19,7 @@ bat 'gradlew test'
     
         stage('Code Analysis') {
           steps {
-            withSonarQubeEnv('TP_8') {
+            withSonarQubeEnv('sonar') {
               bat 'sonar-scanner'
             }
 
