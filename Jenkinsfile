@@ -40,6 +40,15 @@ bat 'gradlew test'
     
     
      stage('build') {
+       post {
+        success {
+          mail(subject: 'Build Success', body: 'New Build is deployed !', from: 'jm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
+        }
+        failure {
+          mail(subject: 'Build Failure', body: "the new build isn't deployed succesfully !", from: 'ijm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
+        }
+        
+      }
       
       
       steps {
@@ -56,6 +65,14 @@ bat 'gradlew test'
         bat 'gradle publish'
       }
     }
+    
+     stage('Notification') {
+      steps {
+        slackSend(baseUrl: 'https://hooks.slack.com/services/', token: '19CspoS1m7PFyPISAMjb-9fKKeogldrl', message: 'New build is Created', channel: 'Malak')
+      }
+    }
+    
+    
     
     
 }
