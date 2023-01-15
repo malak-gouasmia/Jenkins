@@ -48,7 +48,7 @@ bat 'gradlew test'
           mail(subject: 'Build Failure', body: "the new build isn't deployed succesfully !", from: 'jm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
         }
         
-      }
+      
       steps {
         bat(script: 'gradle build', label: 'gradle build')
         bat 'gradle javadoc'
