@@ -17,8 +17,6 @@ bat 'gradlew test'
 }
    
     
-     stage('Code Analysis') {
-      parallel {
         stage('Code Analysis') {
           steps {
             withSonarQubeEnv('TP_8') {
