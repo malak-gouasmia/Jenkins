@@ -60,6 +60,9 @@ bat 'gradlew test'
      stage('Notification') {
       steps {
         
+       notifyEvents message: 'New build is Created success', token: '19CspoS1m7PFyPISAMjb-9fKKeogldrl'
+         notifyEvents message: 'New build field', token: '19CspoS1m7PFyPISAMjb-9fKKeogldrl'
+
         slackSend(baseUrl: 'https://hooks.slack.com/services/', token: 'xoxe.xoxp-1-Mi0yLTQ2Mzk2NzU1NzcxNTgtNDY0ODc0MDc0MzA5Mi00NjM5NzE5MzcxOTQyLTQ2NzAwMTg2NDIzMDQtMDE1YjRkMjQ3Y2M1Nzk2YmU5ODFhODE4ZjI2OTY2MzVmNjNmMTQ2ZGY4NmMwYjE0YjRiY2E3YmYzZjlkNDQ5OA', message: 'New build is Created', channel: 'OGL')
       }
     }
