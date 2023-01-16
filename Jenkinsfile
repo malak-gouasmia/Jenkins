@@ -41,7 +41,11 @@ bat 'gradlew test'
     
      stage('build') {
      
-       post {
+      /
+       
+       
+       
+       /*post {
         success {
           mail(subject: 'Build Success', body: 'New Build is deployed !', from: 'jm_gouasmia@esi.dz', to: 'jm_gouasmia@esi.dz')
         }
@@ -50,7 +54,7 @@ bat 'gradlew test'
         }
         
       }
-      
+      */
       steps {
         bat(script: 'gradle build', label: 'gradle build')
         bat 'gradle javadoc'
